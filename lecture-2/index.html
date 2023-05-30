@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+    <div id="root"></div>
+  </body>
+  <script
+    crossorigin
+    src="https://unpkg.com/react@18/umd/react.production.min.js"
+  ></script>
+  <script
+    crossorigin
+    src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"
+  ></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    const root = document.querySelector("#root");
+    root.style.fontFamily = "serif";
+    function Title() {
+      return (
+        <h3
+          id="cute-title"
+          style={{ color: "orange", fontSize: 50 }}
+          onMouseEnter={() => {
+            console.log("mouse enter!");
+          }}
+        >
+          I'm a CUTE span
+        </h3>
+      );
+    }
+    const Button = () => (
+      <button
+        onClick={() => {
+          console.log("i am clicked!");
+        }}
+        style={{
+          backgroundColor: "skyblue",
+          border: "none",
+          padding: 10,
+          color: "white",
+          cursor: "pointer",
+          borderRadius: 6,
+        }}
+      >
+        Click Me
+      </button>
+    );
+
+    const Container = (
+      <div>
+        <Title />
+        <Button />
+      </div>
+    );
+    ReactDOM.render(Container, root);
+  </script>
+</html>
