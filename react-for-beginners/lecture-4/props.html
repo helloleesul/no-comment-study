@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+    <div id="root"></div>
+  </body>
+  <script
+    crossorigin
+    src="https://unpkg.com/react@17/umd/react.development.js"
+  ></script>
+  <script
+    crossorigin
+    src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+  ></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    function Btn({ text, big }) {
+      // function Btn(props) {
+      // console.log(props);
+      return (
+        <button
+          style={{
+            color: "#fff",
+            background: "tomato",
+            border: "none",
+            display: "block",
+            margin: 10,
+            padding: "10px 20px",
+            cursor: "pointer",
+            borderRadius: 5,
+            fontSize: big ? 32 : 16,
+          }}
+        >
+          {text}
+        </button>
+      );
+    }
+    function App() {
+      return (
+        <div>
+          <Btn text="aaa" big={true} />
+          <Btn text="bbb" />
+          <Btn text="ddd" />
+        </div>
+      );
+    }
+
+    const root = document.querySelector("#root");
+    ReactDOM.render(<App />, root);
+  </script>
+</html>

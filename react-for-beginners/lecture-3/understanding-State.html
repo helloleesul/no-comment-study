@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+    <div id="root"></div>
+  </body>
+  <script
+    crossorigin
+    src="https://unpkg.com/react@18/umd/react.production.min.js"
+  ></script>
+  <script
+    crossorigin
+    src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"
+  ></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    const root = document.querySelector("#root");
+    let counter = 0;
+    function countUp() {
+      counter += 1;
+      console.log(counter);
+    }
+    const Container = () => (
+      <div>
+        <h3>Total click: {counter}</h3>
+        <button onClick={countUp}>Click me!</button>
+      </div>
+    );
+    ReactDOM.render(<Container />, root);
+  </script>
+</html>

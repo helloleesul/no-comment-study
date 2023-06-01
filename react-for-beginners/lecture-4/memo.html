@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+    <div id="root"></div>
+  </body>
+  <script
+    crossorigin
+    src="https://unpkg.com/react@17/umd/react.development.js"
+  ></script>
+  <script
+    crossorigin
+    src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+  ></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    function Btn({ text, onClick }) {
+      console.log(text, "was rendered");
+      return (
+        <button
+          onClick={onClick}
+          style={{
+            color: "#fff",
+            background: "tomato",
+            border: "none",
+            display: "block",
+            margin: 10,
+            padding: "10px 20px",
+            cursor: "pointer",
+            borderRadius: 5,
+          }}
+        >
+          {text}
+        </button>
+      );
+    }
+    const MemorizingBtn = React.memo(Btn);
+    function App() {
+      const [value, setValue] = React.useState("Save Btn");
+      function changeValue() {
+        setValue("Revert Btn");
+      }
+      return (
+        <div>
+          <MemorizingBtn text={value} onClick={changeValue} />
+          <MemorizingBtn text="bbb" />
+        </div>
+      );
+    }
+
+    const root = document.querySelector("#root");
+    ReactDOM.render(<App />, root);
+  </script>
+</html>

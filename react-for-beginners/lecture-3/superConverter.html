@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+    <div id="root"></div>
+  </body>
+  <script
+    crossorigin
+    src="https://unpkg.com/react@17/umd/react.development.js"
+  ></script>
+  <script
+    crossorigin
+    src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+  ></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    function MinutesToHours() {
+      const [minutes, setMinutes] = React.useState(0);
+      const [hours, setHours] = React.useState(0);
+      const [switched, setSwitched] = React.useState(false);
+
+      const onChange = (e) => {
+        if (e.target === document.querySelector("#minutes")) {
+          setMinutes(e.target.value);
+          setHours((e.target.value / 60).toFixed(2));
+        } else if (e.target === document.querySelector("#hours")) {
+          setHours(e.target.value);
+          setMinutes((e.target.value * 60).toFixed(2));
+        }
+      };
+      const onReset = () => {
+        setMinutes(0);
+        setHours(0);
+      };
+      const onSwitched = () => {
+        setSwitched((val) => !val);
+      };
+      return (
+        <div>
+          <h4>
+            <div>Minutes : {minutes}분</div>
+            <div>Hours : {hours}시간</div>
+          </h4>
+          <label htmlFor="minutes">Minutes</label>
+          <input
+            value={minutes}
+            id="minutes"
+            type="number"
+            placeholder="Minutes"
+            onChange={onChange}
+            min="0"
+            disabled={switched}
+          />
+          <label htmlFor="hours">Hours</label>
+          <input
+            value={hours}
+            id="hours"
+            type="number"
+            placeholder="Hours"
+            onChange={onChange}
+            min="0"
+            disabled={!switched}
+          />
+          <div>
+            <button onClick={onReset}>reset</button>
+            <button onClick={onSwitched}>switched</button>
+          </div>
+        </div>
+      );
+    }
+
+    function KmToMiles() {
+      return <h3>Km to Miles</h3>;
+    }
+
+    function App() {
+      const [index, setIndex] = React.useState("");
+      const onSelect = (e) => {
+        setIndex(e.target.value);
+      };
+      return (
+        <div>
+          <h1>Super Converter</h1>
+          <select onChange={onSelect} value={index}>
+            <option value="">---select converter---</option>
+            <option value="0">Minutes & Hours</option>
+            <option value="1">Km & Miles</option>
+          </select>
+          {index === "0" ? (
+            <MinutesToHours />
+          ) : index === "1" ? (
+            <KmToMiles />
+          ) : (
+            <h3>선택하세요</h3>
+          )}
+        </div>
+      );
+    }
+
+    const root = document.querySelector("#root");
+    ReactDOM.render(<App />, root);
+  </script>
+</html>

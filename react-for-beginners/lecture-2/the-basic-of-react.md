@@ -13,14 +13,15 @@ React JS는 어플리케이션과 UI를 간단하게 interactive하게 만들어
 
 react-dom은 라이브러리 또는 package로 모든 React element들을 HTML body에 둘 수 있도록 해준다.
 
-React JS가 어떻게 구현되는지 과정을 알아보는 것이므로 실제론 해당 코드처럼 사용하지 않는다.
+> React JS가 어떻게 구현되는지 과정을 알아보는 것이므로 실제론 해당 코드처럼 사용하지 않는다.
 
 ## 바닐라 JS vs React JS
 
 **바닐라 JS**  
 HTML 요소를 먼저 만들고 👉 그걸 JS로 불러와서 👉 HTML 을 조작하는 식  
 **React JS**  
-JS에서 요소를 먼저 만들고 👉 HTML에 그려준다 React JS가 갱신할수있는 HTML을 컨트롤할 수 있다는 뜻
+JS에서 요소를 먼저 만들고 👉 HTML에 그려준다  
+React JS가 갱신할수있는 HTML을 컨트롤할 수 있다는 뜻
 
 ```js
 vanillaJS.html;
