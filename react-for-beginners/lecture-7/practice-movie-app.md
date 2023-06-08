@@ -6,7 +6,7 @@
 
 ## API 불러오기
 
-### fetch 방식
+### Promise 방식
 
 ```js
 useEffect(() => {
@@ -16,7 +16,7 @@ useEffect(() => {
 }, []); // useEffect의 두번째 인자를 빈배열로 설정해 최초 한번만 렌더한다.
 ```
 
-### async await 방식 ✅
+### async/await 방식 ✅
 
 ```js
 const getMovies = async () => {
@@ -63,3 +63,24 @@ useEffect(() => {
 ### useParams
 
 - path에서 `"/movie/:id"` id 값를 가리키는 `parameters`를 알려줌
+
+```js
+const { id } = useParams();
+
+useEffect(() => {
+  const getMovie = async () => {
+    const json = await (
+      await fetch(`https://yts.mx/api/v2/movie_details.json?movie_id=${id}`)
+    ).json();
+    setMovie(json.data.movie);
+  };
+  getMovie();
+}, [id]);
+// id값이 바뀔때마다 영화정보를 변경
+```
+
+## Breaking Change
+
+사용하는 툴이 업데이트가 되어 내가 작업한 코드도 최신버전으로 사용하고 싶다면 가끔 코드를 수정해야 하는 경우가 발생한다.
+
+> ✅ React.js는 코드를 깨트리지 않고 새로운 기능을 업데이트하고 추가한다. 예전 버전의 코드를 없애지않고 예전 버전의 코드를 기반으로 업데이트 하기 때문에 Breaking Change가 발생하지 않는다!
