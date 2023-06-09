@@ -1,0 +1,53 @@
+.container {
+  color: #fff;
+  padding: 40px;
+  font-family: "Pretendard-Regular";
+  padding-bottom: 60px;
+}
+
+.container article {
+  padding-top: 60px;
+  position: relative;
+}
+
+.etc {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+}
+.etc ul {
+  display: flex;
+  gap: 10px;
+}
+.etc li {
+  border: 1px solid #fff;
+  padding: 5px 20px;
+  border-radius: 100px;
+}
+.description {
+  line-height: 1.4;
+  letter-spacing: 0.05rem;
+  margin-bottom: 20px;
+  border: 1px solid;
+  padding: 20px 30px;
+  border-radius: 10px;
+  font-size: 18px;
+}
+
+.nav {
+  border: none;
+  outline: none;
+  background: none;
+  cursor: pointer;
+  font-size: 22px;
+  color: #fff;
+  font-family: "ClimateCrisisKR-1979";
+  position: absolute;
+  right: 0;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s;
+}
+.nav:hover {
+  border-color: #fff;
+}

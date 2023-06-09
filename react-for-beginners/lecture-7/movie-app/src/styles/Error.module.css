@@ -1,0 +1,37 @@
+.container {
+  color: #fff;
+  padding: 40px;
+  font-family: "Pretendard-Regular";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+h1 {
+  font-family: "ClimateCrisisKR-1979";
+}
+
+.container p {
+  margin: 30px 0;
+  font-size: 22px;
+  border: 1px solid;
+  padding: 20px 30px;
+  border-radius: 10px;
+}
+
+.nav {
+  border: none;
+  outline: none;
+  background: none;
+  cursor: pointer;
+  font-size: 22px;
+  color: #fff;
+  font-family: "ClimateCrisisKR-1979";
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s;
+}
+.nav:hover {
+  border-color: #fff;
+}
