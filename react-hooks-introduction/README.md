@@ -1,5 +1,7 @@
 # Introducing Hooks
 
+컴포넌트에 접근하는 방법과 함수형 프로그래밍 스타일 안에서 상호작용하는 작은 function들을 만들어보자!
+
 ## What are Hooks?
 
 > react의 state machine에 연결하는 기본적인 방법
