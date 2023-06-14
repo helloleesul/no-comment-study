@@ -46,6 +46,14 @@ const App = () => {
 };
 ```
 
-## custom hooks
+## Publishing to NPM
 
-- hooks의 구조와 쉽게 hooks를 만들고 공유할 수 있다.
+1. `npm init` 상세 정보를 등록해준다.  
+   package name, description, git repository, keywords 등
+2. `package.json` 파일에서 `"main":"index.js"`를 확인해준다.
+3. react가 설치되지 않았다면 `npm install react react-dom`을 추가로 설치해준다.
+4. `package.json` 파일에서 `"dependencies"`를 `"peerDependencies"`로 변경해준다.  
+   (사용자가 이미 react를 본인 환경에서 설치했다면 다시 설치하지 않게 설정)
+5. `README.md` 업데이트
+6. `npm login` 로그인 확인
+7. `npm publish --access public` 배포
