@@ -18,7 +18,7 @@ function reducer(state = [], action) {
   //   console.log(action.id);
   switch (action.type) {
     case ADD_TODO:
-      const newTodo = { text: action.text, id: Math.random().toString(36) };
+      const newTodo = { text: action.text, id: Date.now() };
       return [newTodo, ...state];
     case DELETE_TODO:
       return state.filter((todo) => todo.id !== action.id);
