@@ -27,7 +27,7 @@
 
 ---
 
-## Pure Redux (바닐라 자바스크립트 환경)
+## Vanilla Redux (바닐라 자바스크립트 환경)
 
 ```js
 // 기본적인 방법으로 데이터 변경
@@ -64,3 +64,10 @@ store.subscribe(() => (number.innerText = store.getState()));
 add.addEventListener("click", () => store.dispatch({ type: "ADD" }));
 minus.addEventListener("click", () => store.dispatch({ type: "MINUS" }));
 ```
+
+---
+
+## Redux-toolkit
+
+react-redux를 사용하면서 반복해서 사용하는 많은 양의 코드들을 지름길처럼 사용하는 패키지
+더 적은 양의 코드로 같은 기능을 하게 만들어주는 것
